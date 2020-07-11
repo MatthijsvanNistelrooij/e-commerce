@@ -5,7 +5,7 @@
 @include('admin.includes.errors')
 
 
-<div class="card">
+<div class="card"  style="margin-top: 35px">
 
     <div class="card-header">Add a new product</div>
 
@@ -23,14 +23,14 @@
                 <input type="file" name="image" class="form-control">
             </div>
             <div class="form-group">
-                <label for="category">Select Category</label>
+                {{-- <label for="category">Select Category</label>
                 <select name="category_id" id="category" class="form-control">
 
                     @foreach($categories as $category)
                 <option value="{{ $category->id}}">{{ $category->name }}</option>
                     @endforeach
 
-                </select>
+                </select> --}}
             </div>
 
 

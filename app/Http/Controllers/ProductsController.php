@@ -27,13 +27,18 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        if($categories->count() == 0 )
-        {
-            Session::flash('info', 'You have no categories yet.');
 
-            return redirect()->back();
-        }
+        //  <------- CATEGORIE NECESSARY INCLUDE FROM THIS LINE ---- >
+        // $categories = Category::all();
+        // if($categories->count() == 0 )
+        // {
+        //     Session::flash('info', 'You have no categories yet.');
+
+        //     return redirect()->back();
+        // }
+
+                //  <------- CATEGORIE NECESSARY STOP---- >
+
         return view('admin.products.create')->with('categories', Category::all());
     }
 
@@ -50,7 +55,7 @@ class ProductsController extends Controller
             'name' => 'required|max:200',
             'image' => 'required|image',
             'description' => 'required',
-            'category_id' => 'required',
+            // 'category_id' => 'required',
 
             'price' => 'required',
         ]);
@@ -63,8 +68,8 @@ class ProductsController extends Controller
                 'description' => $request->description,
                 'image' => 'uploads/products/' .$image_new_name,
                 'price' => $request->price,
-                'category_id' => $request->category_id,
-                'slug' => str_slug($request->name)
+                // 'category_id' => $request->category_id,
+                // 'slug' => str_slug($request->name)
             ]);
 
             Session::flash('success',  'Product added successfully.');
@@ -108,7 +113,7 @@ class ProductsController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            'category_id' => 'required',
+            // 'category_id' => 'required',
             'price' => 'required'
         ]);
         $product = Product::find($id);

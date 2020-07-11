@@ -1,6 +1,5 @@
 @if ($paginator->hasPages())
-
-        <nav class="navigation align-center">
+<nav class="navigation align-center">
 
             {{-- Pagination Elements --}}
             @foreach ($elements as $element)

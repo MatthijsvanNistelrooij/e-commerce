@@ -9,6 +9,10 @@ class FrontEndController extends Controller
 {
     public function index()
     {
-    return view('index', ['products' => Product::paginate(3)]);
+    return view('index', ['products' => Product::simplePaginate(15)]);
+    }
+    public function singleProduct($id)
+    {
+        return view('single', ['product' => Product::find($id)]);
     }
 }

@@ -21,7 +21,7 @@
 
     <!--Styles for RTL-->
 
-    <!--<link rel="stylesheet" type="text/css" href="{{ asset('app/css/rtl.css') }}">-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('app/css/rtl.css') }}">
 
     <!--External fonts-->
 
@@ -40,10 +40,15 @@
 
             <ul class="nav-add">
                 <li class="cart">
-
-                    <a href="#" class="js-cart-animate">
+                    <a href="{{ route('cart')}}" class="js-cart-animate">
                         <i class="seoicon-basket"></i>
-                        <span class="cart-count">0</span>
+                    <span class="cart-count"> {{ Cart::content()->count() }} </span>
+                    </a>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <a href="{{ route('index')}}" class="js-cart-animate">
+                        <i class="fa fa-home" style="color: rgb(202, 202, 202)"> Home</i>
                     </a>
 
                     <div class="cart-popup-wrap">
@@ -71,9 +76,10 @@
         <div class="row pt120">
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="heading align-center mb60">
-                    <h4 class="h1 heading-title">Udemy E-commerce tutorial</h4>
-                    <p class="heading-text">Buy books, and we ship to you.
-                    </p>
+
+                    <h4 class="h1 heading-title"> <span style="font-size: 250%; margin-right: -35px"> E </span> -commerce Tutorial</h4>
+
+                    <p class="heading-text">Buy books, and we ship 'em to you.</p>
                 </div>
             </div>
         </div>
@@ -82,7 +88,7 @@
     <!-- End Books products grid -->
 
   @yield('content')
-  
+
 </div>
 
 <!-- Footer -->

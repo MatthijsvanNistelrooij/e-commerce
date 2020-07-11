@@ -2,8 +2,8 @@
 
 @section('content')
 
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+            <div class="card" style="margin-top: 35px">
+                <div class="card-header" >{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))

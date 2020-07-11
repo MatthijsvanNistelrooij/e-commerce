@@ -25,6 +25,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
+                    <i class="fa fa-usb" style="color: rgb(0, 0, 0)"></i>
+
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -91,9 +93,9 @@
                 <div class="row">
                    @if(Auth::check())
                    <div class="col-md-4">
-                    <ul class="list-group">
+                    <ul class="list-group"  style="margin-top: 35px">
                         <div class="card card-default">
-                        <div class="card-header" style="border-bottom:none; background-color: rgb(224, 224, 224); color:white">Navigate</div>
+                        <div class="card-header" style="border-bottom:none; background-color: rgb(233, 233, 233); color:white">Navigate</div>
                         <li class="list-group-item" style="border-left: none; border-right:none; border-bottom: none">
                             <a href="{{ route('home') }}" style="text-decoration: none">
                                 <i class="fa fa-home"></i>
@@ -103,39 +105,39 @@
                         </div>
                         <br>
                         <div class="card card-default">
-                            <div class="card-header" style="border-bottom: none; border-left: none; border-right: none; background-color: rgb(192, 192, 192); color:white">View</div>
+                            <div class="card-header" style="border-bottom: none; border-left: none; border-right: none; background-color: rgb(218, 218, 218); color:white">View</div>
 
 
-                                <li class="list-group-item" style="border-right: none; border-left: none; border-right:none">
+                                <li class="list-group-item" style="border-right: none; border-left: none; border-right:none; border-bottom: none">
                                     <a href="{{ route('products')}}" style="text-decoration: none">
                                         <i class="fa fa-tag"></i>
                                         Products
                                     </a>
                                     </li>
 
-                            <li class="list-group-item" style="border-bottom:none; border-right:none; border-left:none">
+                            {{-- <li class="list-group-item" style="border-bottom:none; border-right:none; border-left:none">
                                 <a href="{{ route('categories')}}" style="text-decoration: none">
                                     <i class="fa fa-tag"></i>
                                     Categories
                                 </a>
-                                </li>
+                                </li> --}}
                             </div>
 <br>
                          <div class="card card-default">
                             <div class="card-header" style="border-bottom: none; background-color: rgb(170, 170, 170); color: white">Add</div>
-                            <li class="list-group-item" style="border-left: none; border-right:none">
+                            <li class="list-group-item" style="border-left: none; border-right:none; border-bottom: none">
 
                             <a href="{{ route('products.create')}}" style="text-decoration: none">
                                <i class="fa fa-plus"></i>
                                 Create new product
                             </a>
                             </li>
-                         <li class="list-group-item" style="border-left: none; border-right:none; border-bottom: none">
+                         {{-- <li class="list-group-item" style="border-left: none; border-right:none; border-bottom: none">
                             <a href="{{ route('category.create')}}" style="text-decoration: none">
                                 <i class="fa fa-plus"></i>
                                 Create new category
                             </a>
-                            </li>
+                            </li> --}}
                         </div>
 <br>
 

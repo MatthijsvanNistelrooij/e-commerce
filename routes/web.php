@@ -54,6 +54,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         'as' => 'products.edit'
     ]);
 
+    Route::get('/product/{id}', [
+        'uses' => 'FrontEndController@singleProduct',
+        'as' => 'single'
+    ]);
+
+
     Route::post('/products/update/{id}', [
         'uses' => 'ProductsController@update',
         'as' => 'products.update'
@@ -100,5 +106,28 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
             'as' => 'category.update'
             ]);
 
-});
+            Route::post('/cart/add', [
+                'uses' => 'ShoppingController@add_to_cart',
+                'as' => 'cart.add'
+            ]);
 
+            Route::get('/cart', [
+                'uses' => 'ShoppingController@cart',
+                'as' => 'cart'
+            ]);
+
+            Route::get('/cart/delete/{id}', [
+                'uses' => 'ShoppingController@cart_delete',
+                'as' => 'cart.delete'
+            ]);
+
+            Route::get('/cart/incr/{id}/{qty}', [
+                'uses' => 'ShoppingController@incr',
+                'as' => 'cart.incr'
+            ]);
+
+            Route::get('/cart/decr/{id}/{qty}', [
+                'uses' => 'ShoppingController@decr',
+                'as' => 'cart.decr'
+            ]);
+});

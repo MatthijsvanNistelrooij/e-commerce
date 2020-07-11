@@ -15,17 +15,21 @@
 
         <div class="books-item">
 
-            <div class="books-item-thumb">
-                <img src="{{ $product->image }}" alt="book">
-                <div class="new">New</div>
-                <div class="sale">Sale</div>
-                <div class="overlay overlay-books"></div>
-            </div>
+            <a href="{{ route('single', ['id'=> $product->id ]) }}">
+                    <div class="books-item-thumb">
+                        <img src="{{ $product->image }}" alt="book">
+                        <div class="new">New</div>
+                        <div class="sale">Sale</div>
+                        <div class="overlay overlay-books"></div>
+                    </div>
 
-            <div class="books-item-info">
-            <h5 class="books-title">{{ $product->name }}</h5>
+                <div class="books-item-info">
 
-            <div class="books-price">{{ $product->price }}</div>
+                    <h5 class="books-title">{{ $product->name }}</h5>
+
+            </a>
+
+            <div class="books-price"> $ {{ $product->price }}</div>
             </div>
 
             <a href="19_cart.html" class="btn btn-small btn--dark add">
@@ -42,8 +46,12 @@
 </div>
 <div class="row pb120">
 
+{{--
+<div class="col-lg-12">
 
-    <div class="col-lg-12">
+    {{ $products->links() }}</div>
+
+</div> --}}
 
 <nav class="navigation align-center">
 
@@ -54,10 +62,10 @@
     <a href="#" class="page-numbers bg-border-color"><span>5</span></a>
 
     <svg class="btn-prev">
-        <use xlink:href="#arrow-left"></use>
+        <use xlink:href="#arrow-left"><</use>
     </svg>
     <svg class="btn-next">
-        <use xlink:href="#arrow-right"></use>
+        <use xlink:href="#arrow-right">></use>
     </svg>
 
 </nav>

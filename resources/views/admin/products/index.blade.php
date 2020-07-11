@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="card card-default">
+<div class="card card-default"  style="margin-top: 35px">
     <div class="card-header">Products</div>
     <div class="card-body">
         <table class="table table-hover">
@@ -33,7 +33,7 @@ Trash
         <tr>
 
             <td>
-            <img src="{{ $product->image }}" alt="dna" width="50px" height="60px">
+            <img src="{{ $product->image }}" alt="dna" width="80px" height="auto">
             </td>
             <td>
                 {{ $product->name }}

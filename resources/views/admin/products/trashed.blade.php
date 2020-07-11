@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="card card-default">
+<div class="card card-default"  style="margin-top: 35px">
     <div class="card-header">Trashed Products</div>
     <div class="card-body">
         <table class="table table-hover">
