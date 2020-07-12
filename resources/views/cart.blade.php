@@ -23,7 +23,7 @@
                                 <th class="product-remove">&nbsp;</th>
                                 <th class="product-thumbnail">Product</th>
                                 <th class="product-price" style="padding-left: 20px">Price</th>
-                                <th class="product-quantity">QTY</th>
+                                <th class="product-quantity">Quantity</th>
                                 <th class="product-subtotal">Total</th>
                             </tr>
                             </thead>
@@ -40,7 +40,7 @@
                                     <td class="product-thumbnail">
 
                                         <div class="cart-product__item">
-                                            <a href="#">
+                                            <a href="{{ route('single', ['id'=> $pdt->id ]) }}">
                                             <img src="{{ asset($pdt->model->image) }}" alt="product" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
                                             style="max-width: 100px; margin-right: -10px">
                                             </a>

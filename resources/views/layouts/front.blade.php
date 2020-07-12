@@ -40,24 +40,28 @@
 
             <ul class="nav-add">
                 <li class="cart">
-                    <a href="{{ route('cart')}}" class="js-cart-animate">
+                    <a href="#" class="js-cart-animate">
                         <i class="seoicon-basket"></i>
                     <span class="cart-count"> {{ Cart::content()->count() }} </span>
                     </a>
 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                    <a href="{{ route('index')}}" class="js-cart-animate">
+                    <a href="{{ route('index')}}" class="">
                         <i class="fa fa-home" style="color: rgb(202, 202, 202)"> Home</i>
                     </a>
 
                     <div class="cart-popup-wrap">
                         <div class="popup-cart">
-                            <h4 class="title-cart">No products in the cart!</h4>
+                            <h4 class="title-cart">You have {{ Cart::content()->count() }} product(s) in the cart!</h4>
                             <p class="subtitle">Please make your choice.</p>
-                            <div class="btn btn-small btn--dark">
-                                <span class="text">view all catalog</span>
-                            </div>
+
+                            <a href="{{ route('cart')}}">
+                                <div class="btn btn-small btn--dark">
+                                    <span class="text">View cart</span>
+                                </div>
+
+                            </a>
                         </div>
                     </div>
 
@@ -77,7 +81,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="heading align-center mb60">
 
-                    <h4 class="h1 heading-title"> <span style="font-size: 250%; margin-right: -35px"> E </span> -commerce Tutorial</h4>
+                    <h4 class="h1 heading-title"> <span style="font-size: 250%; margin-right: -35px"> E </span> -commerce pld app</h4>
 
                     <p class="heading-text">Buy books, and we ship 'em to you.</p>
                 </div>
